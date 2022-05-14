@@ -16,10 +16,15 @@ body {
   border: 6px;
   background-color: var(--dark-green);
   color: var(--white);
+  border-bottom: 5px solid white;
 }
 
 .navbar-item {
   color: var(--white);
+}
+
+.field {
+  border-top: solid 5px white;
 }
 
 i {
@@ -27,5 +32,5 @@ i {
 }
 
 .hero-body {
-  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.benchillcommunitycentre.co.uk%2Fastro-pitch%2Ffootball-pitch-banner%2F&psig=AOvVaw0F2GvQYvkQE_Ukz4nKLH_u&ust=1652613846927000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCMDtr73w3vcCFQAAAAAdAAAAABAE");
+  background-image: url("https://media.istockphoto.com/photos/striped-soccer-field-picture-id472347896?k=20&m=472347896&s=612x612&w=0&h=rLYy4-lp9h7LWi2MNtW8ntTpVuj3LIlup2nr7fAHlUE=");
 }
