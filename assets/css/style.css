@@ -1,12 +1,27 @@
 :root {
-
---white: #ffffffff;
---black: #000000ff;
---green: #8eb93fff;
---dark-green: #04724dff;
---blue: #40798cff;
+  --white: #ffffffff;
+  --black: #000000ff;
+  --green: #8eb93fff;
+  --dark-green: #04724dff;
+  --blue: #40798cff;
 }
-    
+
 body {
-    background-color: var(--dark-green)
+  background-color: var(--dark-green);
+  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto Slab", serif;
+}
+
+.navbar {
+  border: 6px;
+  background-color: var(--dark-green);
+  color: var(--white);
+}
+
+.navbar-item {
+  color: var(--white);
+}
+
+i {
+  margin: 20px;
 }
