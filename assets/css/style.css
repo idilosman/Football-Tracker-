@@ -23,8 +23,8 @@ body {
   color: var(--white);
 }
 
-.field {
-  border-top: solid 5px white;
+.control {
+  border: solid 5px white;
 }
 
 i {
