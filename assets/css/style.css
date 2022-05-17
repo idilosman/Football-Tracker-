@@ -23,8 +23,20 @@ body {
   color: var(--white);
 }
 
+.field {
+  border: 6px solid var(--blue);
+  padding: 10px;
+  width: 20em;
+  text-align: center;
+}
+
 .control {
-  border: solid 5px white;
+  padding-bottom: 15px;
+}
+
+.input {
+  text-align: center;
+  padding: 0.8rem;
 }
 
 i {
