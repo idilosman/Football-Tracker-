@@ -28,6 +28,7 @@ body {
   padding: 10px;
   width: 20em;
   text-align: center;
+  margin: 12px;
 }
 
 .control {
@@ -45,4 +46,20 @@ i {
 
 .hero-body {
   background-image: url("https://media.istockphoto.com/photos/striped-soccer-field-picture-id472347896?k=20&m=472347896&s=612x612&w=0&h=rLYy4-lp9h7LWi2MNtW8ntTpVuj3LIlup2nr7fAHlUE=");
+}
+
+#video-card {
+  border: 5px solid white;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  margin: 12px;
+}
+
+.videoText {
+  padding-bottom: 12px;
+}
+
+#videoURL {
+  padding: 20px;
 }
