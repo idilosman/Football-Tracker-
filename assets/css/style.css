@@ -19,6 +19,74 @@ body {
   border-bottom: 5px solid white;
 }
 
+/* navbar burger css */
+.navbar-burger {
+  cursor: pointer;
+  display: block;
+  height: 3.25rem;
+  position: relative;
+  width: 3.25rem;
+  margin-left: auto;
+}
+
+.navbar-burger span {
+  background-color: #4a4a4a;
+  display: block;
+  height: 1px;
+  left: 50%;
+  margin-left: -7px;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: none 86ms ease-out;
+  transition: none 86ms ease-out;
+  -webkit-transition-property: background, left, opacity, -webkit-transform;
+  transition-property: background, left, opacity, -webkit-transform;
+  transition-property: background, left, opacity, transform;
+  transition-property: background, left, opacity, transform, -webkit-transform;
+  width: 15px;
+}
+
+.navbar-burger span:nth-child(1) {
+  margin-top: -6px;
+}
+
+.navbar-burger span:nth-child(2) {
+  margin-top: -1px;
+}
+
+.navbar-burger span:nth-child(3) {
+  margin-top: 4px;
+}
+
+.navbar-burger:hover {
+  background-color: whitesmoke;
+}
+
+.navbar-burger.is-active span {
+  background-color: #00d1b2;
+}
+
+.navbar-burger.is-active span:nth-child(1) {
+  margin-left: -5px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+}
+
+.navbar-burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-burger.is-active span:nth-child(3) {
+  margin-left: -5px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+}
+
+
 .navbar-item {
   color: var(--white);
 }
