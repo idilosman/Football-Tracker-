@@ -29,7 +29,15 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <i class="fa-solid fa-futbol fa-3x"></i>
+
+
+        <div class="is-hidden-desktop navbar-burger burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
         
+<<<<<<< HEAD
 <!-- check why burger is not working -->
         <a
           role="button"
@@ -38,13 +46,15 @@
           aria-expanded="false"
           data-target="navbarBasicExample"
         >
-          <span aria-hidden="false"></span>
-          <span aria-hidden="false"></span>
-          <span aria-hidden="false"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
+=======
+>>>>>>> main
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div id="navbarBasicExample" class="navbar-menu" style="background-color: initial;">
         <div class="navbar-start">
           <a href="#"class="navbar-item"> Home </a>
 
@@ -114,10 +124,10 @@
 
      <!--video 1 -->
      <div id="video-card">
-      <iframe id=videoURL width="300" height="200" src="https://www.youtube.com/embed/bKOTKHtbM54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id=videoURL width="300" height="200" src="https://www.scorebat.com/embed/v/VHRUZXd6S1RpN01vbXZvdGlLUnJpUT09/?token=MTkxNzZfMTY1Mjk4Njk0Ml80MWE1NWFkNDcxYjc2ZDQzMDYyNGNkZTVkMTI1YmFlYTdiNTQ5MmQ2&utm_source=api&utm_medium=video&utm_campaign=apifd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
      <div class = "videoText"> 
       <h3 id="videoTitle">50 famous goals</h3>
-      <p> date </p>
+      <p id="date"> date </p>
     </div>
       </div>
 
@@ -126,7 +136,7 @@
         <iframe id=videoURL width="300" height="200" src="https://www.youtube.com/embed/bKOTKHtbM54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
        <div class = "videoText"> 
         <h3 id="videoTitle">50 famous goals</h3>
-        <p> date </p>
+        <p id="date"> date </p>
       </div>
         </div>
 
@@ -135,9 +145,19 @@
           <iframe id=videoURL width="300" height="200" src="https://www.youtube.com/embed/bKOTKHtbM54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
          <div class = "videoText"> 
           <h3 id="videoTitle">50 famous goals</h3>
-          <p> date </p>
+          <p id="date"> date </p>
         </div>
           </div>
+
+
+
+
+
+
+
+
+
+
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
