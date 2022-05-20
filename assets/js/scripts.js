@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function store() {
   var inputTeams = document.getElementById("ftb");
   localStorage.setItem("ftb", inputTeams.value);
@@ -6,7 +5,6 @@ function store() {
 }
 
 var storedTeams = localStorage.getItem("ftb");
-=======
 console.log("test");
 
 // video API
@@ -32,4 +30,3 @@ const filteredItems = (data) => {
 var title = document.getElementById(videoTitle);
 var matchDate = document.getElementById(date);
 var url = document.getElementById(VideoURL);
->>>>>>> main
