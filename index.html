@@ -37,6 +37,18 @@
           <span></span>
       </div>
         
+<!-- check why burger is not working -->
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
 
       <div id="navbarBasicExample" class="navbar-menu" style="background-color: initial;">
@@ -55,7 +67,7 @@
           </div>
         </div>
 
-        <div class="navbar-end">
+        <!-- <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
               <a class="button is-primary">
@@ -64,9 +76,10 @@
               <a class="button is-light"> Log in </a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </nav>
+
     <!--BANNER/HERO-->
     <section class="hero is-success is-halfheight">
       <div class="hero-body">
@@ -83,13 +96,29 @@
 
 <!--form-->
 
+<!-- New form  -->
+<!-- <div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Please enter your favourite football teams:</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <p class="control">
+        <input class="input is-info" type="text" placeholder="favourite teams">
+      </p>
+      <button class="button is-success">Save</button> 
+    </div>
+  </div>
+</div> --> 
+
     <div class="field">
       <label class="label">Pick your teams</label>
       <div class="control">
-        <input class="input" type="text" placeholder="Type your team here">
+        <input class="input" id="favouriteTeams" type="text" placeholder="Type your team here">
       </div>
-      <button class="button is-success">Save</button>
+      <button onclick="store()" id="ftb" button class="button is-success">Save</button>
      </div>
+
      <!--video 1 -->
      <div id="video-card">
       <iframe id=videoURL width="300" height="200" src="https://www.scorebat.com/embed/v/VHRUZXd6S1RpN01vbXZvdGlLUnJpUT09/?token=MTkxNzZfMTY1Mjk4Njk0Ml80MWE1NWFkNDcxYjc2ZDQzMDYyNGNkZTVkMTI1YmFlYTdiNTQ5MmQ2&utm_source=api&utm_medium=video&utm_campaign=apifd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
