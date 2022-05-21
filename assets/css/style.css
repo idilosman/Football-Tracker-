@@ -69,9 +69,9 @@ body {
 .navbar-burger.is-active span:nth-child(1) {
   margin-left: -5px;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   -webkit-transform-origin: left top;
-          transform-origin: left top;
+  transform-origin: left top;
 }
 
 .navbar-burger.is-active span:nth-child(2) {
@@ -81,11 +81,10 @@ body {
 .navbar-burger.is-active span:nth-child(3) {
   margin-left: -5px;
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
   -webkit-transform-origin: left bottom;
-          transform-origin: left bottom;
+  transform-origin: left bottom;
 }
-
 
 .navbar-item {
   color: var(--white);
@@ -130,4 +129,58 @@ i {
 
 #videoURL {
   padding: 20px;
+}
+
+.recentSearches {
+  text-align: center;
+  border: 5px solid white;
+  display: inline-block;
+  margin: 30px;
+  color: var(--white);
+}
+
+.recentSearches li {
+  border-bottom: 2px solid white;
+  margin: 8px;
+}
+
+.recentSearches h2 {
+  border-bottom: 4px solid var(--white);
+  margin: 8px;
+}
+
+/* .football-card {
+  border: 4px solid var(--white);
+} */
+
+div.columns {
+  margin-top: 50px;
+}
+
+h1 {
+  color: green !important;
+  margin-bottom: 20px;
+}
+
+.table td {
+  font-size: 17px;
+}
+
+.table th {
+  font-size: 17px;
+}
+
+.football-card {
+  border: 5px solid white;
+  display: inline-block;
+}
+
+.class {
+  color: white;
+}
+
+.table-div {
+  border: 6px solid var(--blue);
+  display: inline-block;
+  margin: 10px;
 }
