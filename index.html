@@ -97,6 +97,7 @@
 <!--form-->
 
 <!-- New form  -->
+
 <!-- <div class="field is-horizontal">
   <div class="field-label is-normal">
     <label class="label">Please enter your favourite football teams:</label>
@@ -112,14 +113,84 @@
 </div> --> 
 
     <div class="field">
-      <label class="label">Pick your teams</label>
+      <label class="label">Search your team</label>
       <div class="control">
         <input class="input" id="favouriteTeams" type="text" placeholder="Type your team here">
       </div>
-      <button onclick="store()" id="ftb" button class="button is-success">Save</button>
+      <button onclick="store()" id="ftb" button class="button is-success">Search</button>
      </div>
+    
+    <!--Recent searches-->
 
-     <!--video 1 -->
+    <!--old recent searches-->
+
+   <div class="table-div">
+      <table class="table is-hoverable">
+        <thead>
+          <tr>
+            <th><abbr title="Position">Your Recent Searches</abbr></th>
+           </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <th>Liverpool</th>
+          </tr>
+          <tr>
+            <th>Manchester United</th>
+           </tr>
+          <tr>
+            <th>Man City</th>
+         </tr>
+          <tr>
+            <th>QPR</th>
+            </tr>
+          <tr>
+            <th>Tottenham Hotspurs</th>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+      </div> 
+      <div class="football-card">
+        <div class="team-logo-img"> <img src="https://media.api-sports.io/football/teams/50.png" alt="Logo of the team you've selected">
+          </div>
+        <ul>
+                <div>
+                <h1 class='title'>Manchester City</h1>
+                </div>
+                <table class='table'>
+                  <thead>
+                    <tr>
+                      <th>Next Game</th>
+                      <th>Playing Against</th>
+                      <th>Home or Away</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Tuesday 24th May</td>
+                      <td>Arsenal</td>
+                      <td>Home</td>
+                    </tr>
+                  </tbody>
+                </table>
+        </ul>
+      </div>
+    (11 kB)
+   
+      <div class="content">
+        <h2>Recent Searches</h2>
+        <ul id="demo" type="1">
+        </ul>
+        <button onclick="store()" id="clear-history" button class="button is-warning">Clear search history</button>
+      </div>
+
+  <!--Football card which will render the data from the API-->
+
+    
+<!--video 1 -->
      <div id="video-card">
       <iframe id=videoURL width="300" height="200" src="https://www.scorebat.com/embed/v/VHRUZXd6S1RpN01vbXZvdGlLUnJpUT09/?token=MTkxNzZfMTY1Mjk4Njk0Ml80MWE1NWFkNDcxYjc2ZDQzMDYyNGNkZTVkMTI1YmFlYTdiNTQ5MmQ2&utm_source=api&utm_medium=video&utm_campaign=apifd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
      <div class = "videoText"> 
