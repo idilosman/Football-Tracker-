@@ -1,3 +1,4 @@
+/* color scheme */
 :root {
   --white: #ffffffff;
   --black: #000000ff;
@@ -12,6 +13,7 @@ body {
   font-family: "Roboto Slab", serif;
 }
 
+/* Nav-bar styling */
 .navbar {
   border: 6px;
   background-color: var(--dark-green);
@@ -19,7 +21,11 @@ body {
   border-bottom: 5px solid white;
 }
 
-/* navbar burger css */
+.navbar-item {
+  color: var(--white);
+}
+
+/* navbar burger styling*/
 .navbar-burger {
   cursor: pointer;
   display: block;
@@ -86,14 +92,17 @@ body {
   transform-origin: left bottom;
 }
 
-.navbar-item {
-  color: var(--white);
+/* banner/hero styling */
+
+.hero-body {
+  background-image: url("https://media.istockphoto.com/photos/striped-soccer-field-picture-id472347896?k=20&m=472347896&s=612x612&w=0&h=rLYy4-lp9h7LWi2MNtW8ntTpVuj3LIlup2nr7fAHlUE=");
 }
 
 .hero-foot {
   background-color: var(--dark-green);
 }
 
+/* search form styling */
 .field {
   border: 6px solid var(--blue);
   padding: 10px;
@@ -106,41 +115,19 @@ body {
   padding-bottom: 15px;
 }
 
-.tabs a {
-  color: var(--white);
-}
-
 .input {
   text-align: center;
   padding: 0.8rem;
 }
 
-i {
-  margin: 20px;
-}
-
-.hero-body {
-  background-image: url("https://media.istockphoto.com/photos/striped-soccer-field-picture-id472347896?k=20&m=472347896&s=612x612&w=0&h=rLYy4-lp9h7LWi2MNtW8ntTpVuj3LIlup2nr7fAHlUE=");
-}
-
-#video-card {
-  border: 5px solid white;
+.football-card {
+  border: 5px solid var(--);
   display: inline-block;
-  color: white;
   text-align: center;
-  margin: 12px;
 }
 
-.videoText {
-  padding-bottom: 12px;
-}
-
-#videoURL {
-  padding: 20px;
-}
 /*adjusting for screen sizes*/
 @media screen and (max-width: 768px) {
-
   .hero-body {
     text-align: center;
   }
@@ -151,103 +138,90 @@ i {
     width: 50%;
   }
 
-  #video-card {
-    display: block;
-    margin: 0 auto;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    width: 300px;
+  .recentSearches {
     text-align: center;
-}
+    border: 5px solid white;
+    display: inline-block;
+    margin: 30px;
+    color: var(--white);
+  }
 
+  .recentSearches li {
+    border-bottom: 2px solid white;
+    margin: 8px;
+  }
 
-.recentSearches {
-  text-align: center;
-  border: 5px solid white;
-  display: inline-block;
-  margin: 30px;
-  color: var(--white);
-}
+  .recentSearches h2 {
+    border-bottom: 4px solid var(--white);
+    margin: 8px;
+  }
 
-.recentSearches li {
-  border-bottom: 2px solid white;
-  margin: 8px;
-}
+  .football-card {
+    border: 5px solid var(--);
+    display: inline-block;
+    text-align: center;
+  }
+  .class {
+    color: white;
+  }
+  .table-div {
+    border: 6px solid var(--blue);
+    display: inline-block;
+    margin: 10px;
+  }
+  .team-logo-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  .table {
+    margin-bottom: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
-.recentSearches h2 {
-  border-bottom: 4px solid var(--white);
-  margin: 8px;
-}
+  div.columns {
+    margin-top: 50px;
+  }
 
-/* .football-card {
-  border: 4px solid var(--white);
-} */
-.football-card {
-  border: 5px solid var(--);
-  display: inline-block;
-  text-align: center;
-}
-.class {
-  color: white;
-}
-.table-div {
-  border: 6px solid var(--blue);
-  display: inline-block;
-  margin: 10px;
-}
-.team-logo-img {
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
-}
-.table {
-  margin-bottom: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
+  h1 {
+    color: green !important;
+    margin-bottom: 20px;
+  }
 
-div.columns {
-  margin-top: 50px;
-}
+  .table td {
+    font-size: 17px;
+  }
 
-h1 {
-  color: green !important;
-  margin-bottom: 20px;
-}
+  .table th {
+    font-size: 17px;
+  }
 
-.table td {
-  font-size: 17px;
-}
+  .football-card {
+    border: 5px solid white;
+    display: inline-block;
+  }
 
-.table th {
-  font-size: 17px;
-}
+  .class {
+    color: white;
+  }
 
-.football-card {
-  border: 5px solid white;
-  display: inline-block;
-}
+  .table-div {
+    border: 6px solid var(--blue);
+    display: inline-block;
+    margin: 10px;
+  }
 
-.class {
-  color: white;
-}
+  .content {
+    border: 5px solid var(--white);
+    margin: 20px;
+    display: inline-block;
+    padding: 10px;
+    color: var(--white);
+  }
 
-.table-div {
-  border: 6px solid var(--blue);
-  display: inline-block;
-  margin: 10px;
-}
-
-.content {
-  border: 5px solid var(--white);
-  margin: 20px;
-  display: inline-block;
-  padding: 10px;
-  color: var(--white);
-}
-
-.content h2 {
-  text-decoration: underline;
-  color: var(--white);
-}
+  .content h2 {
+    text-decoration: underline;
+    color: var(--white);
+  }
 }
