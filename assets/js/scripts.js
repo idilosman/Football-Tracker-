@@ -1,3 +1,5 @@
+// on document.ready - render the videos & check for local storage (if so call the function to append to HTML)
+
 // Saving the search into local storage
 
 function store() {
@@ -19,10 +21,14 @@ list.appendChild(entry);
 // re-render the data from API when clicking on a recent search
 
 // clear button to clear all local storages - on click event - localStorage.clear (); (id for btn = "clear-history")
+var clearHistory = document.getElementById("clear-history");
+
+clearHistory.onclick = function () {
+  localStorage.clear();
+  if (localStorage.length === 0) list.innerHTML = "";
+};
 
 // // video API
-
-// on document.ready - render the videos
 // // fetching the data
 
 // let titles = [];
