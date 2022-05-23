@@ -160,6 +160,29 @@ i {
 /* .football-card {
   border: 4px solid var(--white);
 } */
+.football-card {
+  border: 5px solid var(--);
+  display: inline-block;
+  text-align: center;
+}
+.class {
+  color: white;
+}
+.table-div {
+  border: 6px solid var(--blue);
+  display: inline-block;
+  margin: 10px;
+}
+.team-logo-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.table {
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 div.columns {
   margin-top: 50px;
