@@ -138,6 +138,28 @@ i {
 #videoURL {
   padding: 20px;
 }
+/*adjusting for screen sizes*/
+@media screen and (max-width: 768px) {
+
+  .hero-body {
+    text-align: center;
+  }
+
+  .field {
+    margin: auto;
+    margin-top: 1rem;
+    width: 50%;
+  }
+
+  #video-card {
+    display: block;
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 300px;
+    text-align: center;
+}
+
 
 .recentSearches {
   text-align: center;
@@ -227,4 +249,5 @@ h1 {
 .content h2 {
   text-decoration: underline;
   color: var(--white);
+}
 }
