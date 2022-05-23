@@ -1,37 +1,53 @@
-// on document.ready - render the videos & check for local storage (if so call the function to append to HTML)
-
 // Saving the search into local storage
 
 function store() {
   var inputTeams = document.getElementById("favouriteTeams");
-  localStorage.setItem("favouriteTeams", inputTeams.value);
+
+  let searchedTeamsString = localStorage.getItem("favouriteTeams");
+  let searchedTeams;
+
+  if (searchedTeamsString === null) {
+    searchedTeams = [];
+  } else {
+    searchedTeams = JSON.parse(searchedTeamsString);
+  }
+
+  searchedTeams.push(inputTeams.value);
+
+  localStorage.setItem("favouriteTeams", JSON.stringify(searchedTeams));
+  loadTeams();
 }
-var storedTeam = localStorage.getItem("favouriteTeams");
 
-console.log(storedTeam);
+function loadTeams() {
+  var storedTeam = localStorage.getItem("favouriteTeams");
+  var storedTeamParse = JSON.parse(storedTeam);
+  // adding to html
 
-// append the search onto recent searches list
+  const list = document.getElementById("demo");
+
+  list.innerHTML = "";
+
+  for (let i = 0; i < storedTeamParse.length; i++) {
+    const newData = storedTeamParse[i];
+    const entry = document.createElement("li");
+    entry.appendChild(document.createTextNode(newData));
+    list.appendChild(entry);
+  }
+}
+
+var clearHistory = document.getElementById("clear-history");
 
 const list = document.getElementById("demo");
-const newData = storedTeam;
-const entry = document.createElement("li");
-entry.appendChild(document.createTextNode(newData));
-list.appendChild(entry);
-
-// re-render the data from API when clicking on a recent search
-
-// clear button to clear all local storages - on click event - localStorage.clear (); (id for btn = "clear-history")
-var clearHistory = document.getElementById("clear-history");
 
 clearHistory.onclick = function () {
   localStorage.clear();
-  if (localStorage.length === 0) list.innerHTML = "";
+  list.innerHTML = "";
 };
 
 // // video API
 // // fetching the data
 
-// let titles = [];
+let titles = [];
 let dates = [];
 let links = [];
 
