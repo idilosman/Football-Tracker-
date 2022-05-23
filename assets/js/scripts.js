@@ -18,7 +18,7 @@ list.appendChild(entry);
 
 // re-render the data from API when clicking on a recent search
 
-// clear button to clear all local storages - on click event - localStorage.clear ();
+// clear button to clear all local storages - on click event - localStorage.clear (); (id for btn = "clear-history")
 
 // // video API
 
