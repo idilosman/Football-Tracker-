@@ -192,3 +192,16 @@ h1 {
   display: inline-block;
   margin: 10px;
 }
+
+.content {
+  border: 5px solid var(--white);
+  margin: 20px;
+  display: inline-block;
+  padding: 10px;
+  color: var(--white);
+}
+
+.content h2 {
+  text-decoration: underline;
+  color: var(--white);
+}
