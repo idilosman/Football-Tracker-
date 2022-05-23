@@ -16,6 +16,8 @@ function store() {
 
   localStorage.setItem("favouriteTeams", JSON.stringify(searchedTeams));
   loadTeams();
+
+  getID(inputTeams.value);
 }
 
 function loadTeams() {
@@ -44,12 +46,8 @@ clearHistory.onclick = function () {
   list.innerHTML = "";
 };
 
-// // video API
-// // fetching the data
-
-let titles = [];
-let dates = [];
-let links = [];
+// // // video API
+// // // fetching the data
 
 fetch(
   "https://www.scorebat.com/video-api/v3/feed/?token=[MTkxNzZfMTY1MjY5MzE4Nl8zYmM4Y2NkMGEzMmVkN2MwYWRlMzBkZTk1Mjg0NGVmZmIwMTZmMzMy]"
@@ -57,50 +55,75 @@ fetch(
   .then((response) => response.json())
   .then((data) => filteredItems(data));
 
-//   filtering the data
+// //   filtering the data
 
 const filteredItems = (data) => {
   const englishTeams = data.response.filter((item) =>
     item.competition.includes("ENGLAND")
   );
   console.log(englishTeams);
-  return englishTeams;
+  const splicedTeams = englishTeams.slice(0, 3);
+  console.log(splicedTeams);
+  splicedTeams.forEach(teamVideoData);
 };
 
-// // const titles = json.map((filteredItems) => filteredItems.title);
-// // console.log(titles);
+// // appending the data
 
-// const titles = englishTeams.map((englishTeams) => englishTeams.title);
-// console.log(titles);
+function teamVideoData(teamData) {
+  const titles = teamData.title;
+  console.log(titles);
+  const dates = teamData.date;
+  console.log(dates);
+  const links = teamData.videos[0].embed;
+  console.log(links);
 
-// Looping/mapping through the data to get the VideoURL x3
+  const video = document.getElementById("video-container");
 
-// appending the URL into the HTML
+  const entryTitle = document.createElement("h2");
+  entryTitle.appendChild(document.createTextNode(titles));
+  video.appendChild(entryTitle);
 
-// API Getting I.D's from form input - use input to search through the response
+  const entryDate = document.createElement("p");
+  entryDate.appendChild(document.createTextNode(dates));
+  video.appendChild(entryDate);
 
-fetch("https://v3.football.api-sports.io/teams?league=39&season=2021", {
-  method: "GET",
-  headers: {
-    "x-rapidapi-host": "v3.football.api-sports.io",
-    "x-rapidapi-key": "9b9d1d9d07956e4f79f9562b5094204b",
-  },
-  parameters: {
-    league: 39,
-  },
-})
-  .then((response) => {
-    console.log(response);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+  const entryVideo = document.createElement("div");
+  entryVideo.innerHTML = links;
+  video.appendChild(entryVideo);
 
-// getting the fixtures passing through the team ID
+  entryVideo.className = "video-div";
+}
 
-const getFixtures = async () => {
+// // API Getting I.D's from form input - use input to search through the response
+
+async function getID(userInput) {
+  const response = await fetch(
+    "https://v3.football.api-sports.io/teams?league=39&season=2021",
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": "9b9d1d9d07956e4f79f9562b5094204b",
+      },
+      parameters: {
+        league: 39,
+      },
+    }
+  );
+  const json = await response.json();
+  console.log(json);
+
+  // filter through 'json'
+  // pick out the ID
+  // call getFixtures (ID)
+}
+
+// array.length === 0 throw message on screen
+// getting the fixtures passing through the team ID "+teamID+"
+
+const getFixtures = async (teamID) => {
   const res = await fetch(
-    "https://v3.football.api-sports.io/fixtures?team=40&season=2021&status=FT",
+    "https://v3.football.api-sports.io/fixtures?team=39&season=2021&status=FT",
     {
       method: "GET",
       headers: {
@@ -111,12 +134,15 @@ const getFixtures = async () => {
   );
 
   console.log(res);
-  const { response } = await res.json();
-  fixtures = response;
+  const response = await res.json();
+  const fixtures = response;
   console.log(fixtures);
+
+  json.response;
+  // follow steps from before to disect data & append
 };
 
-//update page contents
+// update page contents
 // udpateFixtures
 const updateFixtures = (fixtures) => {};
 
