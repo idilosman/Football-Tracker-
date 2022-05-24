@@ -74,24 +74,25 @@ function teamVideoData(teamData) {
   console.log(titles);
   const dates = teamData.date;
   console.log(dates);
+  const formatedDate = moment(dates).format("MMMM Do, YYYY");
   const links = teamData.videos[0].embed;
   console.log(links);
 
   const video = document.getElementById("video-container");
-
-  const entryTitle = document.createElement("h2");
-  entryTitle.appendChild(document.createTextNode(titles));
-  video.appendChild(entryTitle);
-
-  const entryDate = document.createElement("p");
-  entryDate.appendChild(document.createTextNode(dates));
-  video.appendChild(entryDate);
 
   const entryVideo = document.createElement("div");
   entryVideo.innerHTML = links;
   video.appendChild(entryVideo);
 
   entryVideo.className = "video-div";
+
+  const entryTitle = document.createElement("h2");
+  entryTitle.appendChild(document.createTextNode(titles));
+  video.appendChild(entryTitle);
+
+  const entryDate = document.createElement("p");
+  entryDate.appendChild(document.createTextNode(formatedDate));
+  video.appendChild(entryDate);
 }
 
 // // API Getting I.D's from form input - use input to search through the response
