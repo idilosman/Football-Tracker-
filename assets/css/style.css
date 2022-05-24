@@ -126,6 +126,19 @@ body {
   text-align: center;
 }
 
+.title {
+  margin: 1.5rem;
+}
+
+.table {
+  margin: 1.5rem;
+}
+
+.hometeam-logo-img h1 {
+  color: white;
+  font-weight: 900;
+}
+
 /* Recent searches styling */
 .content {
   border: 5px solid var(--white);
