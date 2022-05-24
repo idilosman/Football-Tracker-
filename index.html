@@ -61,13 +61,23 @@
         <div class="navbar-start">
           <a href="#" class="navbar-item"> Home </a>
 
-          <a href="/HTML2/aboutus.html" class="navbar-item"> About Us </a>
+          <a href="/HTML2/aboutus.html" class="navbar-item" target="_blank">
+            About Us
+          </a>
 
-          <a href="https://www.premierleague.com/" class="navbar-item">
+          <a
+            href="https://www.premierleague.com/"
+            target="_blank"
+            class="navbar-item"
+          >
             Official Premier League</a
           >
 
-          <a href="https://www.bbc.co.uk/sport" class="navbar-item">
+          <a
+            href="https://www.bbc.co.uk/sport"
+            class="navbar-item"
+            target="blank"
+          >
             BBC Sport
           </a>
 
@@ -107,11 +117,17 @@
 
     <!--football data card-->
     <div class="football-card">
-      <div class="team-logo-img">
+      <div class="hometeam-logo-img">
         <img
           src="https://media.api-sports.io/football/teams/50.png"
           alt="Logo of the team you've selected"
         />
+        <h1> VS </h1>
+   <div class="awayteam-logo-img">
+          <img
+            src="https://media.api-sports.io/football/teams/50.png"
+            alt="Logo of the team you've selected"
+          />
       </div>
       <ul>
         <div>
@@ -120,16 +136,18 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Next Game</th>
-              <th>Playing Against</th>
-              <th>Home or Away</th>
+              <th>Date last played</th>
+              <th>Home team</th>
+              <th>Away Team</th>
+              <th>Home Score</th>
+              <th>Away Score</th>
+              <th>League</th>
+              <th>Round</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Tuesday 24th May</td>
-              <td>Arsenal</td>
-              <td>Home</td>
+              <div data-container></div>
             </tr>
           </tbody>
         </table>
@@ -140,6 +158,8 @@
     <div class="content">
       <h2>Recent Searches</h2>
       <ul id="demo" type="1"></ul>
+
+      <!--clear searches button-->
       <button
         onclick="store()"
         id="clear-history"
@@ -174,12 +194,6 @@
 
     <!--script tags/libraries-->
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
       integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="

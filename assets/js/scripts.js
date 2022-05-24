@@ -17,7 +17,7 @@ function store() {
   localStorage.setItem("favouriteTeams", JSON.stringify(searchedTeams));
   loadTeams();
 
-  getID(inputTeams.value);
+  // getID(inputTeams.value);
 }
 
 function loadTeams() {
@@ -61,9 +61,7 @@ const filteredItems = (data) => {
   const englishTeams = data.response.filter((item) =>
     item.competition.includes("ENGLAND")
   );
-  console.log(englishTeams);
   const splicedTeams = englishTeams.slice(0, 3);
-  console.log(splicedTeams);
   splicedTeams.forEach(teamVideoData);
 };
 
@@ -71,13 +69,9 @@ const filteredItems = (data) => {
 
 function teamVideoData(teamData) {
   const titles = teamData.title;
-  console.log(titles);
   const dates = teamData.date;
-  console.log(dates);
   const formatedDate = moment(dates).format("MMMM Do, YYYY");
   const links = teamData.videos[0].embed;
-  console.log(links);
-
   const video = document.getElementById("video-container");
 
   const entryVideo = document.createElement("div");
@@ -97,54 +91,83 @@ function teamVideoData(teamData) {
 
 // // API Getting I.D's from form input - use input to search through the response
 
-async function getID(userInput) {
-  const response = await fetch(
-    "https://v3.football.api-sports.io/teams?league=39&season=2021",
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "9b9d1d9d07956e4f79f9562b5094204b",
-      },
-      parameters: {
-        league: 39,
-      },
-    }
-  );
-  const json = await response.json();
-  console.log(json);
+// async function getID(userInput) {
+//   const response = await fetch(
+//     "https://v3.football.api-sports.io/teams?league=39&season=2021",
+//     {
+//       method: "GET",
+//       headers: {
+//         "x-rapidapi-host": "v3.football.api-sports.io",
+//         "x-rapidapi-key": "9b9d1d9d07956e4f79f9562b5094204b",
+//       },
+//       parameters: {
+//         league: 39,
+//       },
+//     }
+//   );
+//   const json = await response.json();
 
-  // filter through 'json'
-  // pick out the ID
-  // call getFixtures (ID)
-}
+//   const leagueinfo = json.response;
+
+//   console.log(leagueinfo);
+
+//   const teamMatch = leagueinfo.filter((leagueinfo) =>
+//     leagueinfo.team.includes("userInput")
+//   );
+
+//   console.log(teamMatch);
+// }
+
+// filter through 'json'
+// pick out the ID
+// call getFixtures (ID)
 
 // array.length === 0 throw message on screen
 // getting the fixtures passing through the team ID "+teamID+"
 
 const getFixtures = async (teamID) => {
   const res = await fetch(
-    "https://v3.football.api-sports.io/fixtures?team=39&season=2021&status=FT",
+    "https://v3.football.api-sports.io/fixtures?team=46&season=2021&status=FT",
     {
       method: "GET",
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "9b9d1d9d07956e4f79f9562b5094204b",
+        "x-rapidapi-key": "243f40082f54ad9dbddb4f06a0c55a17",
       },
     }
   );
 
   console.log(res);
-  const response = await res.json();
-  const fixtures = response;
+  const fixtures = await res.json();
   console.log(fixtures);
 
-  json.response;
-  // follow steps from before to disect data & append
+  const teamInfo = fixtures.response;
+
+  console.log(teamInfo);
+
+  const mostRecentMatch = teamInfo[teamInfo.length - 1];
+
+  console.log(mostRecentMatch);
+
+  const matchDate = mostRecentMatch.fixtures.date;
+  const homeTeam = mostRecentMatch.teams.home.name;
+  const awayTeam = mostRecentMatch.teams.away.name;
+  const score = mostRecentMatch.score.fulltime;
+  const league = mostRecentMatch.league.name;
+  const round = mostRecentMatch.league.round;
+
+  console.log(matchDate);
+  console.log(homeTeam);
+  console.log(awayTeam);
+  console.log(score);
+  console.log(league);
+  console.log(round);
+
+  const dataContainer = document.getElementById("data-container");
 };
 
 // update page contents
-// udpateFixtures
+// // udpateFixtures
 const updateFixtures = (fixtures) => {};
 
 getFixtures();
