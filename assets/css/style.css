@@ -173,7 +173,7 @@ body {
 }
 
 /* ajusting for screen sizes*/
-*/ @media screen and (max-width: 768px) {
+ @media screen and (max-width: 768px) {
   .hero-body {
     text-align: center;
   }
@@ -270,4 +270,5 @@ body {
     text-decoration: underline;
     color: var(--white);
   }
+
 }
