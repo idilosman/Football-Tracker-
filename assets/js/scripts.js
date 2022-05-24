@@ -127,7 +127,7 @@ function teamVideoData(teamData) {
 
 const getFixtures = async (teamID) => {
   const res = await fetch(
-    "https://v3.football.api-sports.io/fixtures?team=46&season=2021&status=FT",
+    "https://v3.football.api-sports.io/fixtures?team=39&season=2021&status=FT",
     {
       method: "GET",
       headers: {
@@ -156,14 +156,11 @@ const getFixtures = async (teamID) => {
   const awayScore = mostRecentMatch.score.fulltime.away;
   const league = mostRecentMatch.league.name;
   const round = mostRecentMatch.league.round;
+  const homeTeamImage = mostRecentMatch.teams.home.logo;
+  const awayTeamImage = mostRecentMatch.teams.away.logo;
 
-  console.log(matchDate);
-  console.log(homeTeam);
-  console.log(awayTeam);
-  console.log(homeScore);
-  console.log(awayScore);
-  console.log(league);
-  console.log(round);
+  console.log(homeTeamImage);
+  console.log(awayTeamImage);
 
   const dataContainer = document.getElementById("table-container");
 
@@ -200,10 +197,12 @@ const getFixtures = async (teamID) => {
   const enterRound = document.createElement("td");
   enterRound.appendChild(document.createTextNode(round));
   dataContainer.appendChild(enterRound);
+
+  document.getElementById("homeimg").src = homeTeamImage;
+  document.getElementById("awayimg").src = awayTeamImage;
 };
 
 // update page contents
 // // udpateFixtures
-const updateFixtures = (fixtures) => {};
 
 getFixtures();
