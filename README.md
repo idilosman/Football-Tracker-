@@ -18,7 +18,7 @@ Our API's :
 https://www.api-football.com/documentation-v3
 https://www.scorebat.com/
 
-Screenshot:
+Screenshot: ![Alt text](./assets/screenshot.png "Screenshot of our website")
 
 Link to deployed application:
 

@@ -127,7 +127,7 @@ function teamVideoData(teamData) {
 
 const getFixtures = async (teamID) => {
   const res = await fetch(
-    "https://v3.football.api-sports.io/fixtures?team=39&season=2021&status=FT",
+    "https://v3.football.api-sports.io/fixtures?team=51&season=2021&status=FT",
     {
       method: "GET",
       headers: {
