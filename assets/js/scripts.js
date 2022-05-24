@@ -132,7 +132,7 @@ const getFixtures = async (teamID) => {
       method: "GET",
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "243f40082f54ad9dbddb4f06a0c55a17",
+        "x-rapidapi-key": "0c1884728a129c5d744a402a0b8d9cc4",
       },
     }
   );
@@ -149,21 +149,57 @@ const getFixtures = async (teamID) => {
 
   console.log(mostRecentMatch);
 
-  const matchDate = mostRecentMatch.fixtures.date;
+  const matchDate = mostRecentMatch.fixture.date;
   const homeTeam = mostRecentMatch.teams.home.name;
   const awayTeam = mostRecentMatch.teams.away.name;
-  const score = mostRecentMatch.score.fulltime;
+  const homeScore = mostRecentMatch.score.fulltime.home;
+  const awayScore = mostRecentMatch.score.fulltime.away;
   const league = mostRecentMatch.league.name;
   const round = mostRecentMatch.league.round;
 
   console.log(matchDate);
   console.log(homeTeam);
   console.log(awayTeam);
-  console.log(score);
+  console.log(homeScore);
+  console.log(awayScore);
   console.log(league);
   console.log(round);
 
-  const dataContainer = document.getElementById("data-container");
+  const dataContainer = document.getElementById("table-container");
+
+  // // appending match date
+  const enterMatchDate = document.createElement("td");
+  enterMatchDate.appendChild(document.createTextNode(matchDate));
+  dataContainer.appendChild(enterMatchDate);
+  // // appending home team
+  const enterHomeTeam = document.createElement("td");
+  enterHomeTeam.appendChild(document.createTextNode(homeTeam));
+  dataContainer.appendChild(enterHomeTeam);
+
+  // // appending away team
+  const enterAwayTeam = document.createElement("td");
+  enterAwayTeam.appendChild(document.createTextNode(awayTeam));
+  dataContainer.appendChild(enterAwayTeam);
+
+  // //  appending home score
+  const enterHomeScore = document.createElement("td");
+  enterHomeScore.appendChild(document.createTextNode(homeScore));
+  dataContainer.appendChild(enterHomeScore);
+
+  // // appending away score
+  const enterawayScore = document.createElement("td");
+  enterawayScore.appendChild(document.createTextNode(awayScore));
+  dataContainer.appendChild(enterawayScore);
+
+  // // appending league
+  const enterleague = document.createElement("td");
+  enterleague.appendChild(document.createTextNode(league));
+  dataContainer.appendChild(enterleague);
+
+  // // appending round
+  const enterRound = document.createElement("td");
+  enterRound.appendChild(document.createTextNode(round));
+  dataContainer.appendChild(enterRound);
 };
 
 // update page contents
