@@ -33,12 +33,24 @@
         <div
           class="is-hidden-desktop navbar-burger burger"
           onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');"
-          >
+        >
           <span></span>
           <span></span>
           <span></span>
         </div>
 
+        <!-- check why burger is not working -->
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
 
       <div
@@ -49,7 +61,7 @@
         <div class="navbar-start">
           <a href="#" class="navbar-item"> Home </a>
 
-          <a href="/HTML2/aboutus.html" class="navbar-item" target="_blank">
+          <a href="./aboutus.html" class="navbar-item" target="_blank">
             About Us
           </a>
 
@@ -75,7 +87,7 @@
     </nav>
 
     <!--BANNER/HERO-->
-  <section class="hero is-success is-halfheight">
+    <section class="hero is-success is-halfheight">
       <div class="hero-body">
         <div class="">
           <p class="title">Pick your favourite teams below</p>
@@ -88,8 +100,6 @@
     </section>
 
     <!-- search form-->
-    <section style="display:flex; flex-wrap: wrap;">
-    <div>
     <div class="field">
       <label class="label">Search your team</label>
       <div class="control">
@@ -104,23 +114,8 @@
         Search
       </button>
     </div>
-    <div class="content">
-          <h2>Recent Searches</h2>
-          <ul id="demo" type="1"></ul>
 
-          <!--clear searches button-->
-          <button
-            onclick="store()"
-            id="clear-history"
-            button
-            class="button is-warning"
-          >
-            Clear search history
-          </button>
-    </div>
-    </div>
     <!--football data card-->
-    <div>
     <div class="football-card">
       <div>
         <div class="hometeam-logo-img">
@@ -138,6 +133,7 @@
             />
           </div>
         </div>
+        <ul>
           <table class="table" id="table-container">
             <thead>
               <tr>
@@ -156,20 +152,33 @@
               </tr>
             </tbody>
           </table>
+        </ul>
       </div>
-      </div>
-      <div
-       id="video-container"
-       class="video-container"
-      ></div>
     </div>
-    </section>
+
     <!--Recent searches container-->
-    
+    <div class="content">
+      <h2>Recent Searches</h2>
+      <ul id="demo" type="1"></ul>
+
+      <!--clear searches button-->
+      <button
+        onclick="store()"
+        id="clear-history"
+        button
+        class="button is-warning"
+      >
+        Clear search history
+      </button>
+    </div>
 
     <!--Parent video container (videos added via JS)-->
 
-    
+    <div
+      style="width: 300px"
+      id="video-container"
+      class="video-container"
+    ></div>
 
     <!--Footer-->
 
