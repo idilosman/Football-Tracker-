@@ -75,18 +75,16 @@ function teamVideoData(teamData) {
   const video = document.getElementById("video-container");
 
   const entryVideo = document.createElement("div");
-  entryVideo.innerHTML = links;
-  video.appendChild(entryVideo);
-
   entryVideo.className = "video-div";
-
+  entryVideo.innerHTML = links;
   const entryTitle = document.createElement("h2");
-  entryTitle.appendChild(document.createTextNode(titles));
-  video.appendChild(entryTitle);
-
+  entryTitle.textContent = titles;
   const entryDate = document.createElement("p");
-  entryDate.appendChild(document.createTextNode(formatedDate));
-  video.appendChild(entryDate);
+  entryDate.textContent = formatedDate;
+  entryVideo.appendChild(entryTitle)
+  entryVideo.appendChild(entryDate)
+  
+  video.appendChild(entryVideo);
 }
 
 // // API Getting I.D's from form input - use input to search through the response
@@ -132,7 +130,7 @@ const getFixtures = async (teamID) => {
       method: "GET",
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "0c1884728a129c5d744a402a0b8d9cc4",
+        "x-rapidapi-key": "521e0e355e3772b05cb817a35bd421d1",
       },
     }
   );
@@ -150,6 +148,7 @@ const getFixtures = async (teamID) => {
   console.log(mostRecentMatch);
 
   const matchDate = mostRecentMatch.fixture.date;
+  const formatedmatchDate = moment(matchDate).format("MMMM Do, YYYY");
   const homeTeam = mostRecentMatch.teams.home.name;
   const awayTeam = mostRecentMatch.teams.away.name;
   const homeScore = mostRecentMatch.score.fulltime.home;
@@ -159,14 +158,12 @@ const getFixtures = async (teamID) => {
   const homeTeamImage = mostRecentMatch.teams.home.logo;
   const awayTeamImage = mostRecentMatch.teams.away.logo;
 
-  console.log(homeTeamImage);
-  console.log(awayTeamImage);
 
   const dataContainer = document.getElementById("table-container");
 
   // // appending match date
   const enterMatchDate = document.createElement("td");
-  enterMatchDate.appendChild(document.createTextNode(matchDate));
+  enterMatchDate.appendChild(document.createTextNode(formatedmatchDate));
   dataContainer.appendChild(enterMatchDate);
   // // appending home team
   const enterHomeTeam = document.createElement("td");
