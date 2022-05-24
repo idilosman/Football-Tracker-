@@ -138,6 +138,12 @@ body {
 .content h2 {
   color: white;
   text-transform: uppercase;
+  margin: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#clear-history {
+  margin: 0.5rem;
 }
 
 /* video styling */
