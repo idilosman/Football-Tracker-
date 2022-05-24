@@ -132,7 +132,7 @@ const getFixtures = async (teamID) => {
       method: "GET",
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "0c1884728a129c5d744a402a0b8d9cc4",
+        "x-rapidapi-key": "521e0e355e3772b05cb817a35bd421d1",
       },
     }
   );
@@ -150,6 +150,7 @@ const getFixtures = async (teamID) => {
   console.log(mostRecentMatch);
 
   const matchDate = mostRecentMatch.fixture.date;
+  const formatedmatchDate = moment(matchDate).format("MMMM Do, YYYY");
   const homeTeam = mostRecentMatch.teams.home.name;
   const awayTeam = mostRecentMatch.teams.away.name;
   const homeScore = mostRecentMatch.score.fulltime.home;
@@ -159,14 +160,11 @@ const getFixtures = async (teamID) => {
   const homeTeamImage = mostRecentMatch.teams.home.logo;
   const awayTeamImage = mostRecentMatch.teams.away.logo;
 
-  console.log(homeTeamImage);
-  console.log(awayTeamImage);
-
   const dataContainer = document.getElementById("table-container");
 
-  // // appending match date
+  // appending match date
   const enterMatchDate = document.createElement("td");
-  enterMatchDate.appendChild(document.createTextNode(matchDate));
+  enterMatchDate.appendChild(document.createTextNode(formatedmatchDate));
   dataContainer.appendChild(enterMatchDate);
   // // appending home team
   const enterHomeTeam = document.createElement("td");
