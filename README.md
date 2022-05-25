@@ -20,7 +20,7 @@ https://www.scorebat.com/
 
 Screenshot: ![Alt text](./assets/screenshot.png "Screenshot of our website")
 
-Link to deployed application:
+Link to deployed application:https://idilosman.github.io/Football-Tracker-/
 
 Contributors to the project:
 Jayad
